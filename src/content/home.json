@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Welcome to Dirty Boots Café",
+    "subtitle": "Coffee, community, and crumbs of adventure.",
+    "button_text": "Meet the Roost",
+    "button_link": "/roost"
+  },
+  "sections": [
+    {
+      "heading": "A Life Well Walked",
+      "text": "We believe the best journeys end with good coffee, fresh bread, and stories shared under open skies."
+    },
+    {
+      "heading": "Where to Find Us",
+      "text": "Our little café on wheels rolls into parks, markets, and open fields. Follow us — find a moment of warmth."
+    },
+    {
+      "heading": "The Roost: Our Open-Door Bakehouse",
+      "text": "In the heart of our town, Dirty Boots Roost is more than a bakery — it's an invitation. Fresh bakes daily. Doors open wide. Events and workshops coming soon."
+    }
+  ]
+}

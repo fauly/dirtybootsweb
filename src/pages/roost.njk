@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: The Roost
+permalink: /roost/
+description: Our open-door bakehouse - a place to gather and celebrate simple, heartfelt living.
+---
+
+<section class="hero bg-cream text-black">
+  <div class="container mx-auto text-center pt-8">
+    <h1 class="text-4xl font-bold mb-4">{{ roost.title }}</h1>
+    <p class="text-lg">{{ roost.subtitle }}</p>
+  </div>
+</section>
+
+<section class="story bg-brown text-white py-8 px-[10%]">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-4">{{ roost.sections[0].heading }}</h2>
+    <p class="text-lg">{{ roost.sections[0].text }}</p>
+  </div>
+</section>
+
+<section class="mission bg-sage text-black py-16 px-[10%]">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
+    <p class="text-lg">{{ roost.mission }}</p>
+  </div>
+</section>
+
+<section class="events bg-cream text-black py-16 px-[10%]">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-4">{{ roost.sections[2].heading }}</h2>
+    <p class="text-lg">{{ roost.sections[2].text }}</p>
+  </div>
+</section>
+
+<section class="fresh-bakes bg-light-brown text-white py-16 px-[10%]">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-4">{{ roost.sections[1].heading }}</h2>
+    <p class="text-lg">{{ roost.sections[1].text }}</p>
+  </div>
+</section>
+
+<section class="call-to-action bg-brown text-white py-16 px-[10%]">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">Join Us at The Roost</h2>
+    <p class="text-lg">Be part of our community, share stories, and enjoy fresh bakes.</p>
+    <a href="/contact" class="btn btn-primary mt-4">Inquire About Events</a>
+  </div>
+</section>

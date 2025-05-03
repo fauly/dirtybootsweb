@@ -1,0 +1,26 @@
+{
+  "locations": [
+    {
+      "name": "Main Park",
+      "address": "123 Park Lane, Hometown, ST 12345",
+      "schedule": "Every Saturday from 9 AM to 2 PM",
+      "description": "Join us for a cozy morning with fresh brews and baked goods in the heart of the park."
+    },
+    {
+      "name": "Farmers Market",
+      "address": "456 Market St, Hometown, ST 12345",
+      "schedule": "Every Sunday from 8 AM to 1 PM",
+      "description": "Find us at the market for a delightful selection of pastries and coffee to start your day."
+    },
+    {
+      "name": "Community Events",
+      "address": "Various locations",
+      "schedule": "Check our social media for updates",
+      "description": "We pop up at community events throughout the month. Follow us to catch our next stop!"
+    }
+  ],
+  "contact_info": {
+    "email": "info@dirtybootscafe.com",
+    "phone": "(123) 456-7890"
+  }
+}

@@ -1,0 +1,24 @@
+<ul class="flex items-center space-x-6 md:space-x-8">
+    {% set navItems = [
+        { url: "/", text: "Home" },
+        { url: "/menu/", text: "Menu" },
+        { url: "/roost/", text: "The Roost" },
+        { url: "/find-us/", text: "Find Us" },
+        { url: "/contact/", text: "Contact" }
+    ] %}
+    
+    {% for item in navItems %}
+    <li class="relative">
+        <a href="{{ item.url }}" 
+           class="nav-link text-base font-medium {% if page.url == item.url %}text-earth-600{% else %}text-earth-500 hover:text-earth-600{% endif %} px-2 py-1">
+            {{ item.text }}
+        </a>
+    </li>
+    {% endfor %}
+    
+    <li class="ml-4">
+        <a href="/find-us/" class="btn-primary text-sm">
+            Visit Us
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,34 @@
+{
+  "menu_items": [
+    {
+      "name": "Espresso",
+      "description": "Rich and bold espresso brewed from our house blend.",
+      "price": "$3.00"
+    },
+    {
+      "name": "Cappuccino",
+      "description": "A perfect balance of espresso, steamed milk, and foam.",
+      "price": "$4.50"
+    },
+    {
+      "name": "Freshly Baked Croissant",
+      "description": "Flaky and buttery, baked fresh every morning.",
+      "price": "$2.50"
+    },
+    {
+      "name": "Chocolate Chip Cookie",
+      "description": "Soft, chewy, and loaded with chocolate chips.",
+      "price": "$1.75"
+    },
+    {
+      "name": "Seasonal Fruit Tart",
+      "description": "A delightful tart filled with seasonal fruits and cream.",
+      "price": "$4.00"
+    },
+    {
+      "name": "Herbal Tea",
+      "description": "A selection of calming herbal teas to warm your soul.",
+      "price": "$2.50"
+    }
+  ]
+}

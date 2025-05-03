@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Coustard:wght@400;900&family=Gaegu&family=Just+Me+Again+Down+Here&family=Unkempt:wght@400;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-ink-300 font-sans leading-relaxed;
+  }
+
+  h1, h2, h3 {
+    @apply text-earth-600 font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl mb-4;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl mb-3;
+  }
+
+  p {
+    @apply mb-4 text-ink-300;
+  }
+
+  /* Webkit (Chrome, Safari, Edge) scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 69, 19, 0.2); /* earth-500 with opacity */
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 69, 19, 0.3); /* earth-500 with more opacity on hover */
+  }
+
+  /* Firefox scrollbar styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 69, 19, 0.2) transparent;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply inline-block px-6 py-3 rounded-lg bg-earth-500 text-white font-medium 
+           transition-all duration-300 hover:bg-earth-600 hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-earth-400;
+  }
+  
+  .btn-secondary {
+    @apply inline-block px-6 py-3 rounded-lg bg-transparent border-2 border-earth-400
+           text-earth-500 font-medium transition-all duration-300
+           hover:bg-earth-50 hover:border-earth-500 hover:text-earth-600
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-earth-400;
+  }
+
+  .texture-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+    @apply font-bold;
+  }
+  
+  .texture-text-paper {
+    background-image: url('../images/textureFabric-opt.png');
+    background-size: cover;
+    @apply texture-text;
+  }
+  
+  .texture-text-wood {
+    background-image: url('../images/textureWoodFloor-opt.png');
+    background-size: cover;
+    @apply texture-text;
+  }
+  
+  /* Brightness variants */
+  .texture-light {
+    filter: brightness(1.5);
+  }
+  
+  .texture-lighter {
+    filter: brightness(2);
+  }
+  
+  .texture-lightest {
+    filter: brightness(4);
+  }
+  
+
+
+  /* Blend mode variants for different effects */
+  .texture-blend-lighten {
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .texture-blend-screen {
+    background-blend-mode: screen;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-link {
+    @apply relative transition-colors duration-300 hover:text-earth-500
+           after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+           after:bg-earth-400 after:opacity-0 after:transition-opacity
+           hover:after:opacity-100;
+  }
+  
+  .img-blob {
+    @apply overflow-hidden;
+    border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+  }
+  
+  .img-frame {
+    @apply border-4 border-cream-100 shadow-lg;
+  }
+  
+  .divider-wave {
+    @apply relative overflow-hidden;
+  }
+  
+  .divider-wave::before {
+    content: '';
+    @apply absolute w-full h-16 -top-16 left-0 bg-current;
+    clip-path: polygon(0% 100%, 25% 60%, 50% 100%, 75% 60%, 100% 100%);
+  }
+
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden
+           before:absolute before:inset-0 before:bg-black before:bg-opacity-30;
+  }
+
+  .content-section {
+    @apply py-16 md:py-24;
+  }
+
+  .content-card {
+    @apply bg-white bg-opacity-95 backdrop-blur-sm rounded-xl shadow-xl p-8 md:p-10;
+  }
+
+  .home-header {
+    @apply transition-all duration-500 ease-out;
+    transform: translateY(-100%);
+  }
+  
+  .home-header.header-visible {
+    transform: translateY(0);
+  }
+
+  .typing-text {
+    @apply inline-block;
+  }
+
+  .typing-cursor {
+    @apply inline-block text-white text-5xl md:text-6xl;
+    animation: blink 0.7s infinite;
+    position: relative;
+    top: -0.1em;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+/* Animation utilities */
+.parallax-layer {
+  will-change: transform;
+  @apply transition-transform duration-300 ease-out;
+}
+
+.reveal {
+  @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+}
+
+.reveal.active {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Text shadow utility */
+.text-outline {
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(66, 38, 0), 0 0 5px rgb(53, 40, 9);
+}
+
+.text-shadow-lg {
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-md {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Text backdrop for better readability */
+.text-backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Add to your tailwind.css file in the utilities section */
+.text-shadow-brown {
+  text-shadow: 
+    0 3px 6px rgba(76, 29, 11, 0.8),  /* Dark brown with high opacity for main shadow */
+    0 2px 4px rgba(76, 29, 11, 0.7),  /* Second layer of shadow */
+    0 1px 16px rgba(59, 24, 10, 0.8); /* Wide spread for depth */
+}
+
+/* For an even stronger effect */
+.text-shadow-brown-lg {
+  text-shadow: 
+    0 4px 8px rgba(59, 24, 10, 0.9),  /* Stronger, darker brown */
+    0 2px 6px rgba(59, 24, 10, 0.8),  /* Second layer */
+    0 0 20px rgba(59, 24, 10, 0.6),   /* Wide glow effect */
+    0 1px 3px rgba(0, 0, 0, 0.9);     /* Thin black shadow for definition */
+}
+
+/* Edge blur utilities */
+.blur-top-edge {
+  -webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+  mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+}
+
+.blur-bottom-edge {
+  -webkit-mask-image: linear-gradient(to top, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+  mask-image: linear-gradient(to top, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+}
+
+/* Combined top and bottom edge blur */
+.blur-top-bottom-edge {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 5%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0.6) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 5%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0.6) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Container for rotating images with fixed blur mask */
+.rotating-image-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Edge blur utilities */
+.blur-top-edge {
+  -webkit-mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+  mask-image: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+}
+
+.blur-bottom-edge {
+  -webkit-mask-image: linear-gradient(to top, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+  mask-image: linear-gradient(to top, 
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.6) 5%, 
+    rgba(0,0,0,1) 10%);
+}
+
+/* Combined top and bottom edge blur */
+.blur-top-bottom-edge {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 5%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0.6) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 5%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0.6) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.svg-earth {
+  filter: invert(27%) sepia(15%) saturate(2637%) hue-rotate(18deg) brightness(92%) contrast(84%);
+}
+
+.svg-sage {
+  filter: invert(68%) sepia(11%) saturate(324%) hue-rotate(77deg) brightness(92%) contrast(88%);
+}
+
+.svg-cream {
+  filter: invert(93%) sepia(8%) saturate(454%) hue-rotate(12deg) brightness(109%) contrast(92%);
+}
+
+.svg-yellow {
+  filter: invert(83%) sepia(100%) saturate(600%) hue-rotate(330deg) brightness(120%) contrast(92%) drop-shadow(3px 7px darkred);
+}
+
+
+/* Paper texture utility */
+.texture-paper {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Font utility */
+@font-face {
+  font-family: 'Handwritten';
+  src: url('/fonts/Caveat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Handwritten';
+  src: url('/fonts/Caveat-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Hide Alpine.js elements until Alpine loads */
+[x-cloak] {
+  display: none !important;
+}

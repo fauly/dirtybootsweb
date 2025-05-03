@@ -1,0 +1,151 @@
+---
+layout: base.njk
+title: Welcome
+permalink: /
+description: Coffee, community, and crumbs of adventure at Dirty Boots Café & Roost.
+---
+
+<!-- First Section: Line of Boots -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Image layer with parallax effect -->
+    <div class="parallax-layer blur-[4px] absolute inset-0 -mt-1" data-speed="0.05">
+        <img src="/images/lineOfBoots-opt.png" alt="Line of Boots" class="w-full h-full object-cover object-[51%_center] md:object-[center]">
+    </div>
+    
+    <!-- Content overlay -->
+    <div class="relative z-10 text-center px-4">
+        <h1 class="text-8xl texture-text-paper md:text-8xl nt-bold text-cream-100 text-shadow-lg">
+            <span class="font-just-me typing-text block mb-10 pb-6 texture-lightest texture-text-paper " id="firstPart">dirty boots'</span>
+            <div class="relative h-[20px] flex items-center justify-center">
+                <!-- Hidden placeholder text to maintain height (opacity 0) -->
+                <span class="opacity-0 absolute font-unkempt" aria-hidden="true">Café</span>
+                <span class="opacity-0 absolute font-coustard" aria-hidden="true">Roost</span>
+                
+                <!-- Actual animated text -->
+                <span class="font-unkempt typing-text relative texture-text-paper texture-lightest texture-text-paper" id="secondPart"></span>
+                <span class="font-coustard typing-text relative texture-text-paper texture-lightest texture-text-paper" id="thirdPart"></span>
+            </div>
+        </h1>
+
+        <div class="relative py-2">
+            <!-- SVG with curved text -->
+            <svg class="w-full h-24 mx-auto" viewBox="0 0 800 100" preserveAspectRatio="xMidYMid meet">
+                <!-- Define the path -->
+                <defs>
+                    <path id="curve" d="M0,80 Q400,0 800,80" />
+                </defs>
+                
+                <!-- Apply text to the path -->
+                <text class="text-[2.5rem] md:text-[2.5rem] text-shadow-lg fill-cream-400 font-gaegu" text-anchor="middle">
+                    <textPath href="#curve" startOffset="50%">
+                        Coffee, community, and crumbs of adventure
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+
+        <!-- a href="/menu/" class="btn-primary text-lg px-8 py-3">Our Menu</a -->
+    </div>
+</section>
+
+<!-- Header after hero section -->
+<div class="home-header sticky top-0 z-50 opacity-0 transition-opacity duration-300 transform -translate-y-1" :class="{ 'opacity-100 translate-y-0': isScrolled }">
+    {% include 'header.njk' %}
+</div>
+
+<!-- Second Section: Wood Fabric with Overlap -->
+<section class="relative min-h-[50vh] md:min-h-screen flex items-center overflow-hidden -mt-48 md:-mt-42 lg:-mt-52">
+    <!-- Parallax SVG Doodles - Now with responsive sizing and positioning -->
+    <div class="parallax-layer absolute top-45 left-3 md:top-15 md:left-20 z-20" data-speed="0.2" data-spin="0.1">
+        <img src="/svgs/breadLoaf.svg" alt="Doodle 1" class="w-48 h-48 md:w-64 md:h-64 svg-cream">
+    </div>
+    <div class="parallax-layer absolute top-12 right-4 md:top-20 md:right-1/4 z-20" data-speed="0.1" data-spin="-0.05">
+        <img src="/svgs/twoCookies.svg" alt="Doodle 2" class="w-48 h-48 md:w-64 md:h-64 svg-cream">
+    </div>
+    <div class="parallax-layer absolute top-2/3 right-12 md:top-10 md:left-1/4 z-20" data-speed="0.1" data-spin="-0.08">
+        <img src="/svgs/bowlAndSpoon.svg" alt="Doodle 3" class="w-48 h-48 md:w-64 md:h-64 svg-cream">
+    </div>
+    <div class="parallax-layer absolute top-2/3 right-1/4 md:top-2/4 md:right-12 z-20" data-speed="0.5" data-spin="0.04">
+        <img src="/svgs/whiskAndSpread.svg" alt="Doodle 4" class="w-48 h-48 md:w-64 md:h-64 svg-cream">
+    </div>
+    <!-- Image with parallax effect -->
+    <div class="parallax-layer blur-top-bottom-edge rotating-image-container absolute inset-0 z-10 overflow-hidden" data-speed="0.0">
+        <div class="absolute inset-0 w-full h-full" style="transform-origin: center center;" data-spin="0.02">
+            <img src="/images/textureWoodFloor-opt.png" alt="Texture Fabric" 
+                class="w-[100%] h-[100%] object-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible">
+        </div>
+    </div>
+</section>
+
+<!-- Third Section: Focaccia Table -->
+<section class="relative min-h-[100vh] flex items-center overflow-hidden -mt-24 md:-mt-32 lg:-mt-16">
+    <!-- Image with parallax effect -->
+    <div class="parallax-layer absolute inset-0" rotating-image-container data-speed="0.35">
+    <img src="/images/focacciaTable-opt.png" alt="Focaccia Table" 
+         class="w-full h-full object-none overflow-visible object-[36%_center] md:object-center" data-spin="-0.008">
+    </div> 
+    
+    <!-- div class="container relative z-10 mx-auto px-6 py-24 -mt-64 md:right-[25%]">
+        <div class="max-w-xl ml-auto bg-cream-200 bg-opacity-60 backdrop-blur-xl p-8 rounded-lg shadow-lg reveal">
+            <h2 class="text-4xl font-bold text-earth-600 mb-6">The Roost</h2>
+            <p class="text-xl text-ink-300 mb-6 leading-relaxed">
+                Our offering of space and a warm place to smell some freshly baked goods - whether they be our inhouse foccacia, cookies, cakes or any other number of magical items to roll out the oven.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="/roost/" class="btn-primary">Visit The Roost</a>
+                <a href="/find-us/" class="btn-secondary">Find Us</a>
+            </div>
+        </div>
+    </div -->
+
+    <div class="parallax-layer absolute inset-0" data-speed="0.02" data-spin="0.03">
+    <img src="/svgs/CurvyArrow.svg" alt="Curvy Arrow" 
+         class="w-full h-full svg-yellow"
+         style="--tw-rotate: -90deg; --tw-scale-x: 2; --tw-scale-y: 2; --tw-translate-y: -20%;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));">
+    </div> 
+</section>
+
+<section class="relative min-h-[100vh] flex flex-col md:flex-row items-center justify-center md:justify-end -mt-80 md:-mt-24 lg:-mt-64">
+    <!-- Heading -->
+    <div class="absolute parallax-layer z-10 text-center md:text-left md:right-[20%] top-[20%] md:top-auto" data-speed="0.1">
+        <span class="flex flex-col md:flex-row items-left text-4xl md:text-4xl gap-2 md:gap-4 font-coustard font-bold">
+            the <h1 class="text-8xl md:text-6xl lg:text-8xl">Roost</h1>
+        </span>
+    </div>
+    
+    <!-- Kraft Bag and Stamp -->
+    <div class="left-0 md:left-[10%] top-[105%] md:top-[90%] absolute parallax-layer z-10">
+        <img src="/images/KraftBagSide-opt.png" class="absolute w-full h-full rotate-[-10deg] scale-[1.5] md:scale-[3]">
+        <img src="/svgs/dirtyBootsRoostStamp.svg" class="w-full h-full rotate-[-10deg] scale-[1] md:scale-[1.8]">
+    </div>
+    
+    <!-- Paragraph -->
+    <p class="absolute z-0 text-center font-coustard text-lg md:text-lg lg:text-xl parallax-layer w-4/5 sm:w-2/3 md:w-1/2 lg:w-1/3 top-[20%] md:top-[40%] md:mr-[10%] lg:mr-[15%] px-4 md:px-0" data-speed="0.001">
+        Our small offering of space and a warm place, where all are always welcome, whether to smell some freshly baked goods or chew off an ear. <br /> <br />There will always be our inhouse foccacia, cookies, cakes or any other number of magical items to roll out the oven ready to greet you - and two big smiles.
+    </p>
+</section>
+
+<!-- Join Newsletter Section -->
+<!-- section class="relative py-24 overflow-hidden">
+    <div class="container relative z-10 mx-auto px-6">
+        <div class="max-w-lg mx-auto bg-cream-200 p-10 rounded-2xl shadow-md reveal">
+            <h2 class="text-3xl font-bold text-earth-600 mb-6 text-center">Stay Connected</h2>
+            <p class="text-ink-300 mb-8 text-center">
+                Join our community to receive updates on seasonal offerings, pop-up locations, and Roost events.
+            </p>
+            
+            <form class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-ink-300 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border-2 border-cream-300 focus:border-sage-400 focus:ring focus:ring-sage-200 focus:ring-opacity-50 bg-cream-100">
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="btn-primary w-full">
+                        Join Our Newsletter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section -->

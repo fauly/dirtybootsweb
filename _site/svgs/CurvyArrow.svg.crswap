@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="pencilEffect" x="-10%" y="-10%" width="120%" height="120%" bx:pinned="true">
+      <title>Pencil</title>
+      <feTurbulence type="turbulence" baseFrequency="0.04 0.03" numOctaves="3" result="noise" stitchTiles="stitch"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" result="displacement-map-0"/>
+      <feGaussianBlur stdDeviation="0" in="displacement-map-0" result="gaussian-blur-0"/>
+    </filter>
+  </defs>
+  <path style="fill: none; paint-order: fill markers; filter: url(&quot;#pencilEffect&quot;); stroke: rgb(0, 0, 0); stroke-width: 6px;" d="M 325.285 217.461 C 300.488 212.784 274.473 203.02 259.166 224.701 C 240.612 250.98 260.868 316.15 176.155 270.068"/>
+  <path style="stroke: rgb(0, 0, 0); fill: none; filter: url(&quot;#pencilEffect&quot;); stroke-width: 6px; stroke-linecap: round; stroke-linejoin: round;" d="M 193.409 264.298 C 190.995 267.499 175.709 270.637 174.775 268.822 C 173.816 266.959 184.618 282.14 184.618 288.825"/>
+</svg>

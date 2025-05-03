@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Contact Us
+permalink: /contact/
+description: Get in touch with Dirty Boots Café and Dirty Boots Roost.
+---
+
+<section class="py-24">
+    <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-handwritten text-earth-600 mb-8 text-center">Get in Touch</h1>
+        <p class="text-xl text-center mb-12 max-w-2xl mx-auto">We'd love to hear from you! Whether you have a question, want to inquire about events, or just want to say hello, feel free to reach out.</p>
+        
+        <div class="max-w-lg mx-auto bg-cream-200 p-10 rounded-2xl shadow-md reveal">
+            <form action="#" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-ink-300 mb-1">Name</label>
+                    <input type="text" id="name" name="name" required 
+                           class="w-full px-4 py-3 rounded-xl border-2 border-cream-300 focus:border-sage-400 focus:ring focus:ring-sage-200 focus:ring-opacity-50 bg-cream-100">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-ink-300 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required 
+                           class="w-full px-4 py-3 rounded-xl border-2 border-cream-300 focus:border-sage-400 focus:ring focus:ring-sage-200 focus:ring-opacity-50 bg-cream-100">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-ink-300 mb-1">Message</label>
+                    <textarea id="message" name="message" required rows="5"
+                              class="w-full px-4 py-3 rounded-xl border-2 border-cream-300 focus:border-sage-400 focus:ring focus:ring-sage-200 focus:ring-opacity-50 bg-cream-100"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn-primary w-full">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

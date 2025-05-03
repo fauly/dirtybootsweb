@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Get in Touch with Dirty Boots Café",
+    "subtitle": "We'd love to hear from you!",
+    "button_text": "Send a Message",
+    "button_link": "/contact"
+  },
+  "sections": [
+    {
+      "heading": "Connect with Us",
+      "text": "Whether you have a question, want to book an event, or just want to share your thoughts, we're here for you. Reach out anytime!"
+    },
+    {
+      "heading": "Follow Our Journey",
+      "text": "Stay updated on our latest pop-ups, events, and delicious offerings by following us on social media."
+    },
+    {
+      "heading": "Join Our Community",
+      "text": "Sign up for our newsletter to receive updates, special offers, and heartfelt stories from the Dirty Boots family."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Our Menu
+permalink: /menu/
+description: Discover our seasonal drinks and fresh bakes at Dirty Boots Café & Roost.
+---
+
+<section class="py-24">
+    <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-handwritten text-earth-600 mb-8 text-center">Our Menu</h1>
+        <p class="text-xl text-center mb-12 max-w-2xl mx-auto">Fresh coffee, baked goods, and seasonal treats prepared with love.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {% for item in menu.menu_items %}
+            <div class="menu-card reveal">
+                <h2 class="text-2xl font-serif mb-2">{{ item.name }}</h2>
+                <p class="mb-4">{{ item.description }}</p>
+                <span class="block font-medium text-earth-500">{{ item.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

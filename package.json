@@ -1,0 +1,30 @@
+{
+  "name": "dirty-boots-cafe",
+  "version": "1.0.0",
+  "description": "A fluid, intuitive, and emotionally warm website for Dirty Boots Café and Dirty Boots Roost.",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production run-s build:css build:eleventy",
+    "build:css": "npx postcss ./src/styles/tailwind.css -o ./_site/styles/tailwind.css",
+    "build:eleventy": "npx @11ty/eleventy",
+    "dev": "run-p dev:*",
+    "dev:css": "npx postcss ./src/styles/tailwind.css -o ./_site/styles/tailwind.css --watch",
+    "dev:eleventy": "npx @11ty/eleventy --serve --incremental"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "alpinejs": "^3.14.0",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.3.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^11.0.1"
+  },
+  "keywords": []
+}

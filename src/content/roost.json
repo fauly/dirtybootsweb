@@ -1,0 +1,19 @@
+{
+  "title": "Come on in - all are welcome",
+  "subtitle": "Here there's something for everyone, and if not we'll be there to make it happen.",
+  "mission": "At Dirty Boots Roost, we believe in the magic of baking. Our mission is to create a warm, inviting space where everyone can gather, share, and enjoy the simple pleasures of life.",
+  "sections": [
+    {
+      "heading": "Our Story",
+      "text": "Born from a passion for baking and community, Dirty Boots Roost is a place where the aroma of fresh bread fills the air and laughter echoes off the walls. We invite you to be part of our journey."
+    },
+    {
+      "heading": "Fresh Bakes Daily",
+      "text": "Our bakehouse offers a variety of artisanal breads, pastries, and treats made with love and the finest ingredients. Each item is crafted to bring joy and warmth to your day."
+    },
+    {
+      "heading": "Events & Workshops",
+      "text": "Join us for special events and workshops where you can learn the art of baking, connect with others, and create lasting memories. Stay tuned for our upcoming schedule!"
+    }
+  ]
+}
