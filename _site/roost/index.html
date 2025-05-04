@@ -14,203 +14,30 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-cream text-ink-300">
-    <!-- Audio elements - hidden and initially muted -->
-    <audio id="texture-audio" preload="auto" loop class="hidden">
-        <source src="../audio/texture-ambience.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    
-        <header class="sticky top-0 z-50 bg-cream-50 bg-opacity-95 backdrop-blur-sm border-b border-cream-200 shadow-sm transition-all duration-300" x-data="{ mobileMenuOpen: false, isScrolled: false }" @scroll.window="isScrolled = (window.pageYOffset > window.innerHeight - 100)">
-    <div class="container mx-auto">
-        <div class="flex flex-wrap items-center justify-between py-4">
-            <!-- Logo and title -->
-            <div class="flex items-center space-x-4">
-                <img src="/images/logo.png" alt="Dirty Boots Café" 
-                     class="h-12 w-auto md:h-14 rounded-full shadow-sm" 
-                     onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2236%22%20height%3D%2236%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Ccircle%20fill%3D%22%238B4513%22%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%2218%22%3E%3C%2Fcircle%3E%3Ctext%20x%3D%2218%22%20y%3D%2223%22%20font-family%3D%22Arial%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23FFFFFF%22%3EDB%3C%2Ftext%3E%3C%2Fsvg%3E';">
-                <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-earth-600 leading-tight">Dirty Boots Café</h1>
-                    <p class="text-sm text-earth-500 font-medium">Coffee, community, adventure</p>
-                </div>
-            </div>
-            
-            <!-- Mobile menu button -->
-            <button 
-                @click="mobileMenuOpen = !mobileMenuOpen" 
-                class="block md:hidden p-2.5 rounded-lg text-earth-600 hover:bg-earth-50 hover:text-earth-500 
-                       focus:outline-none focus:ring-2 focus:ring-earth-200 transition duration-150"
-                aria-label="Main menu"
-                aria-expanded="false"
-                :aria-expanded="mobileMenuOpen.toString()"
-            >
-                <svg class="h-6 w-6" x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                
-                <svg class="h-6 w-6" x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-cloak>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            
-            <!-- Desktop navigation -->
-            <nav class="hidden md:block">
-                <ul class="flex items-center space-x-6 md:space-x-8">
-    
-    
-    
-    <li class="relative">
-        <a href="/" 
-           class="nav-link text-base font-medium text-earth-500 hover:text-earth-600 px-2 py-1">
-            Home
-        </a>
-    </li>
-    
-    <li class="relative">
-        <a href="/menu/" 
-           class="nav-link text-base font-medium text-earth-500 hover:text-earth-600 px-2 py-1">
-            Menu
-        </a>
-    </li>
-    
-    <li class="relative">
-        <a href="/roost/" 
-           class="nav-link text-base font-medium text-earth-600 px-2 py-1">
-            The Roost
-        </a>
-    </li>
-    
-    <li class="relative">
-        <a href="/find-us/" 
-           class="nav-link text-base font-medium text-earth-500 hover:text-earth-600 px-2 py-1">
-            Find Us
-        </a>
-    </li>
-    
-    <li class="relative">
-        <a href="/contact/" 
-           class="nav-link text-base font-medium text-earth-500 hover:text-earth-600 px-2 py-1">
-            Contact
-        </a>
-    </li>
-    
-    
-    <li class="ml-4">
-        <a href="/find-us/" class="btn-primary text-sm">
-            Visit Us
-        </a>
-    </li>
-</ul>
-            </nav>
-        </div>
-        
-        <!-- Mobile navigation -->
-        <nav 
-            x-show="mobileMenuOpen" 
-            x-transition:enter="transition ease-out duration-200"
-            x-transition:enter-start="opacity-0 transform -translate-y-4"
-            x-transition:enter-end="opacity-100 transform translate-y-0"
-            x-transition:leave="transition ease-in duration-150"
-            x-transition:leave-start="opacity-100 transform translate-y-0"
-            x-transition:leave-end="opacity-0 transform -translate-y-4"
-            class="md:hidden py-4 border-t border-cream-200"
-            x-cloak
-        >
-            <ul class="space-y-2">
-    
-    
-    
-    <li>
-        <a href="/" 
-           class="block px-4 py-2.5 rounded-lg text-base font-medium text-earth-500 hover:bg-earth-50 hover:text-earth-600 transition-colors duration-200">
-            Home
-        </a>
-    </li>
-    
-    <li>
-        <a href="/menu/" 
-           class="block px-4 py-2.5 rounded-lg text-base font-medium text-earth-500 hover:bg-earth-50 hover:text-earth-600 transition-colors duration-200">
-            Menu
-        </a>
-    </li>
-    
-    <li>
-        <a href="/roost/" 
-           class="block px-4 py-2.5 rounded-lg text-base font-medium bg-earth-50 text-earth-600 transition-colors duration-200">
-            The Roost
-        </a>
-    </li>
-    
-    <li>
-        <a href="/find-us/" 
-           class="block px-4 py-2.5 rounded-lg text-base font-medium text-earth-500 hover:bg-earth-50 hover:text-earth-600 transition-colors duration-200">
-            Find Us
-        </a>
-    </li>
-    
-    <li>
-        <a href="/contact/" 
-           class="block px-4 py-2.5 rounded-lg text-base font-medium text-earth-500 hover:bg-earth-50 hover:text-earth-600 transition-colors duration-200">
-            Contact
-        </a>
-    </li>
-    
-    
-    <li class="pt-4">
-        <a href="/find-us/" class="block w-full text-center btn-primary">
-            Visit Us Today
-        </a>
-    </li>
-</ul>
-        </nav>
-    </div>
-</header>
     
     
     <main>
         
 <section class="hero bg-cream text-black">
-  <div class="container mx-auto text-center pt-8">
-    <h1 class="text-4xl font-bold mb-4">Come on in - all are welcome</h1>
-    <p class="text-lg">Here there&#39;s something for everyone, and if not we&#39;ll be there to make it happen.</p>
+  <div class="size-[65%] parallax-layer" data-speed="2">
+    <img src="/images/wildmanGradientTransparent-opt.png" class="">
+  </div>
+  <div class="absolute size-[50%] parallax-layer top-0 right-4" data-speed="0.0001"> 
+    <img src="/images/wildmanSignPaint-opt.png" class="rotate-[2deg]">
+  </div>
+  <div class="font-coustard text-justify parallax-layer w-2/3 pl-10" data-speed="1.5">
+  <h1 class="text-cream-900">Dirty Boots Roost</h1>
+  <h3>- 17 Wildman Street, Kendal -</h3>
+  <img src="/svgs/curve.svg" class="absolute svg-yellow top-14 left-[20%] height-[75%] width-[100%] parallax-layer" data-speed="0.15" data-spin="-0.06">
+  <p class="w-[72%] text-2xl text-pretty pt-24">
+  The home to our open door bakehouse, where you're always welcome.
+  We bake all the goods for our mobile café here and prep for any local deliveries.
+  You'll find the door unlocked from Tuesday till Thursday - 4am till 6pm
+  Come on in for a coffee, or goods straight out of our oven.
+  </p>
   </div>
 </section>
 
-<section class="story bg-brown text-white py-8 px-[10%]">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">Our Story</h2>
-    <p class="text-lg">Born from a passion for baking and community, Dirty Boots Roost is a place where the aroma of fresh bread fills the air and laughter echoes off the walls. We invite you to be part of our journey.</p>
-  </div>
-</section>
-
-<section class="mission bg-sage text-black py-16 px-[10%]">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">Our Mission</h2>
-    <p class="text-lg">At Dirty Boots Roost, we believe in the magic of baking. Our mission is to create a warm, inviting space where everyone can gather, share, and enjoy the simple pleasures of life.</p>
-  </div>
-</section>
-
-<section class="events bg-cream text-black py-16 px-[10%]">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">Events &amp; Workshops</h2>
-    <p class="text-lg">Join us for special events and workshops where you can learn the art of baking, connect with others, and create lasting memories. Stay tuned for our upcoming schedule!</p>
-  </div>
-</section>
-
-<section class="fresh-bakes bg-light-brown text-white py-16 px-[10%]">
-  <div class="container mx-auto">
-    <h2 class="text-3xl font-semibold mb-4">Fresh Bakes Daily</h2>
-    <p class="text-lg">Our bakehouse offers a variety of artisanal breads, pastries, and treats made with love and the finest ingredients. Each item is crafted to bring joy and warmth to your day.</p>
-  </div>
-</section>
-
-<section class="call-to-action bg-brown text-white py-16 px-[10%]">
-  <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-semibold mb-4">Join Us at The Roost</h2>
-    <p class="text-lg">Be part of our community, share stories, and enjoy fresh bakes.</p>
-    <a href="/contact" class="btn btn-primary mt-4">Inquire About Events</a>
-  </div>
-</section>
     </main>
     
     <footer class="text-black py-8 border-t border-cream-300">

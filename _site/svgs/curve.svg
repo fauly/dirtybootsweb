@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100">
+  <defs>
+    <filter id="pencilEffect" x="-10%" y="-10%" width="120%" height="120%">
+      <title>Pencil</title>
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" result="noise" stitchTiles="stitch"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" result="displacement-map-0"/>
+      <feGaussianBlur stdDeviation="0" in="displacement-map-0" result="gaussian-blur-0"/>
+    </filter>
+  </defs>
+  <path style="stroke: rgb(0, 0, 0); fill: none; stroke-width: 7px; stroke-linecap: round; filter: url(&quot;#pencilEffect&quot;);" d="M 16.546 63.411 C 104.756 11.759 204.305 78.312 248.42 84.346 C 341.375 97.062 447.584 7.639 483.455 14.825"/>
+</svg>
